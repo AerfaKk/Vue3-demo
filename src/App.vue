@@ -3,7 +3,7 @@
   <nav>
     <div>
       <img v-on:click="goHome" class="logo" src="../public/favicon.ico" alt="logo">
-      <RouterLink :to="{ path: '/pj', hash: '#router_view' }" active-class="active">通用配件</RouterLink>
+      <RouterLink :to="{ path: '/parts', hash: '#router_view' }" active-class="active">汽车配件</RouterLink>
       <RouterLink :to="{ path: '/cgq', hash: '#router_view' }" active-class="active">传感器</RouterLink>
       <RouterLink :to="{ path: '/cgq', hash: '#router_view' }" active-class="active">传感器</RouterLink>
       <RouterLink :to="{ path: '/cgq', hash: '#router_view' }" active-class="active">传感器</RouterLink>
@@ -38,6 +38,7 @@
 
   const router = useRouter()
   let search = ref('')
+  
 
   function goHome() {
     router.push('/')

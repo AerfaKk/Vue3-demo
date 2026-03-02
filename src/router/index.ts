@@ -8,9 +8,35 @@ const router = createRouter({
       redirect: '/home'
     },
     {
-      path: '/pj',
-      name: 'peijian',
-      component: () => import('@/views/peijian.vue')
+      path: '/parts',
+      name: 'parts',
+      component: () => import('@/views/parts.vue'),
+      children: [      
+        {
+          path: '',
+          redirect: '/parts/allParts'
+        },
+        {
+          path: 'allParts',
+          name: 'allParts',
+          component: () => import('@/views/parts_nav/allParts.vue')
+        },
+         {
+          path: 'teslaParts',
+          name: 'teslaParts-id',
+          component: () => import('@/views/parts_nav/teslaParts.vue')
+        },
+        {
+          path: 'liParts',
+          name: 'liParts',
+          component: () => import('@/views/parts_nav/liParts.vue')
+        },
+        {
+          path: 'nioParts',
+          name: 'nioParts',
+          component: () => import('@/views/parts_nav/nioParts.vue')
+        }
+      ]
     },
     {
       path: '/cgq',
