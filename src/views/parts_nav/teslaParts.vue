@@ -1,11 +1,18 @@
 <template>
     <ul>
-        <li class="part" v-for="part in teslaParts" :key="part.id">{{ part.name }}</li>
+        <li class="part" v-for="part in teslaParts" :key="part.id">
+            <RouterLink to="/shopping" class="item">
+                <img class="img" src="@/img/20141205212053_KxCde.jpeg" alt="">
+                <span class="name">1111</span>
+                <span class="money">money</span>
+            </RouterLink>
+        </li>
     </ul>
 </template>
 
 <script setup>
     import { reactive } from 'vue';
+    import { RouterLink } from 'vue-router';
     let teslaParts = reactive([
         { id: '001', name: '1', price: 1, src: ''},
         { id: '002', name: '2', price: 2, src: ''},
@@ -27,8 +34,8 @@
     .part{
         width: 360px;
         height: 300px;
-        border: 1px solid #000;
         margin: 10px;
+        margin-bottom: 30px;
     }
     ul::after {
         content: "";
@@ -36,6 +43,28 @@
         height: 0; /* 不占高度，只占宽度 */
         visibility: hidden; /* 隐藏占位元素，不影响视觉 */
         margin: 10px;
-        border: 1px solid #000;
+    }
+    .item{
+
+        text-decoration: none;
+    }
+    .img{
+        width: 100%;
+        height: 80%;
+        border-radius: 10px;
+    }
+    .name{
+        display: block;
+        font-size: 20px;
+        text-align: left;
+        padding-left: 10px;
+        text-decoration: none;
+        margin: 5px 0;
+    }
+    .money{
+        display: block;
+        font-size: 15px;
+        text-align: right;
+        padding-right: 10px;
     }
 </style>

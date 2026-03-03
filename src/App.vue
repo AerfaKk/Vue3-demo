@@ -20,12 +20,11 @@
     </div>
   </nav>
 
-  <main>
+  <main v-if="$route.meta.showMain ?? true">
     <img src="./img/v2-056e22d3f54164924938f963852d6657_r.jpg" alt="">
   </main>
-
-  <div class="sp" id="router_view">
-    <router-view></router-view>
+  <div class="sp" id="router_view">    
+      <router-view></router-view>
   </div>
 </template>
 
@@ -33,10 +32,11 @@
 
   import { inputEmits } from 'element-plus'
   import { ref, onMounted, onUnmounted } from 'vue'
-  import { useRouter,RouterLink } from 'vue-router'
+  import { useRouter,RouterLink,useRoute } from 'vue-router'
   import { Search,Grid } from '@element-plus/icons-vue'
 
   const router = useRouter()
+  const route = useRoute()
   let search = ref('')
   
 
@@ -53,6 +53,9 @@
   const handleScroll = () => {
     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
     isScroll.value = scrollTop > 0
+    if (route.path == '/shopping') {
+      isScroll.value = true
+    }
     const nav_as=document.querySelectorAll('nav a') as NodeListOf<HTMLElement>
     if (isScroll.value) {
       document.querySelector('nav')!.style.backgroundColor = 'white'
@@ -91,6 +94,7 @@
     position: fixed;
     width: 100%;
     height: 60px;
+    z-index: 1;
   }
   nav>div {
     width: 60%;
@@ -129,7 +133,8 @@
   }
 
   .sp {
-    margin-top: 50px;
+    padding-top: 50px;
+    background: #eeeded;
   }
   main {
     width: 100%;

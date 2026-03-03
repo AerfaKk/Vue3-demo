@@ -23,12 +23,11 @@
         display: flex;
         width: 100%;
         height: 100%;
+        background: #eeeded;
     }
     .nav{
-        background-color: #f5f5f5;
+        background-color: #ffffff;
         border-radius: 20px;
-        border: 1px solid #878787;
-        box-shadow: #484848 0px 0px 5px;
         padding: 10px 5px;
         width: 13%;
         margin-left: 200px;
@@ -40,9 +39,7 @@
         width: 70%;
         min-height: 1000px;
         border-radius: 20px;
-        border: 1px solid #878787;
-        box-shadow: #484848 0px 0px 5px;
-        background-color: #fff;
+        background-color: #ffffff;
         margin-right: 150px;
         padding: 20px 20px;
     }
@@ -54,7 +51,8 @@
         border-radius: 10px;
     }
     .active{
-        background-color: #959595;
+        background-color: #dfdfdf;
+
     }
 
 </style>
